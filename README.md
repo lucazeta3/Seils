@@ -4,13 +4,19 @@ La prima versione #buildinpublic dei Seils.
 
 Questa è solo la prima delle alfa. 
 
-# Python 
+# Python e Git
 
 Scarica python dal sito ufficale di python.org 
 
+E git attraverso https://git-scm.com/downloads
+
 # Clona la repository
 
-''' git clone https://github.com/lucazeta3/Seils.git '''
+''' 
+
+git clone https://github.com/lucazeta3/Seils.git 
+
+'''
 
 # Installa Ollama
 
@@ -50,4 +56,4 @@ or
 
 Vai sul tuo browser all'indirizzo localhost:5001
 
-Et Voila se hai dei problemi scrivimi a luca.avidano@zeta3.it
+Et Voila se hai dei problemi scrivimi a luca.avidano@zeta3.it 
