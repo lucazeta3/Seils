@@ -32,7 +32,7 @@ ollama run llama3
 
 Apri nel tuo terminale la cartella Seils. Nella directory scrivere : 
 
-pip install -r requirements.txt
+'''pip install -r requirements.txt'''
 
 # Lancia il software
 
