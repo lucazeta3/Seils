@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1f1f2e;
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2d2d44;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+}
+
+.sidebar nav ul li a.active, .sidebar nav ul li a:hover {
+    background-color: #404073;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+    background-color: #2d2d44;
+    color: #fff;
+}
+
+.user-info {
+    text-align: right;
+}
+
+.dashboard {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #2d2d44;
+    padding: 20px;
+    border-radius: 4px;
+    flex: 1;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.card-number {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card:last-child {
+    margin-right: 0;
+}
+
+.new-lead, .prospect-message {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.new-lead input, .prospect-message textarea, .prospect-message input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    flex: 1;
+    margin-right: 10px;
+    background-color: #2d2d44;
+    color: #fff;
+}
+
+.new-lead button, .prospect-message button {
+    padding: 10px 20px;
+    background-color: #e43f5a;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.new-lead button:hover, .prospect-message button:hover {
+    background-color: #e05a6f;
+}
+
+.lead-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #2d2d44;
+}
+
+.lead-table th, .lead-table td {
+    padding: 10px;
+    border: 1px solid #404073;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.status.sent {
+    background-color: #4caf50;
+}
+
+.status.pending {
+    background-color: #ff9800;
+}
+
+.status.not-sent {
+    background-color: #f44336;
+}
+
+.status.completed {
+    background-color: #9c27b0;
+}
