@@ -12,11 +12,8 @@ E git attraverso https://git-scm.com/downloads
 
 # Clona la repository
 
-''' 
 
-git clone https://github.com/lucazeta3/Seils.git 
-
-'''
+--- git clone https://github.com/lucazeta3/Seils.git ---
 
 # Installa Ollama
 
