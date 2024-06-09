@@ -3,7 +3,6 @@ from flask_cors import CORS
 from scrape import scrape_website_text
 from summarize import summarize_text_with_mistral
 from outreach import generate_outreach_message
-from database import init_db, save_to_db
 
 app = Flask(__name__)
 CORS(app)
@@ -41,16 +40,18 @@ def summarize():
 @app.route('/outreach', methods=['POST'])
 def outreach():
     data = request.get_json()
+    name = data.get('name')
+    company = data.get('company')
+    product = data.get('product')
     summary = data.get('summary')
-    if not summary:
-        return jsonify({'error': 'No summary provided.'}), 400
+    if not (name and company and product and summary):
+        return jsonify({'error': 'Missing required fields.'}), 400
 
-    outreach_message = generate_outreach_message(summary)
+    outreach_message = generate_outreach_message(name, company, product, summary)
     if outreach_message:
         return jsonify({'message': outreach_message})
     else:
         return jsonify({'error': 'Failed to generate outreach message with Mistral.'}), 500
 
 if __name__ == '__main__':
-    init_db()
     app.run(debug=True, host='0.0.0.0', port=5001)

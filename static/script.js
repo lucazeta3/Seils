@@ -66,3 +66,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const outreachButton = document.getElementById('outreach-button');
+    const outreachResult = document.getElementById('outreach-result');
+
+    outreachButton.addEventListener('click', async function() {
+        const name = document.getElementById('name-input').value;
+        const company = document.getElementById('company-input').value;
+        const product = document.getElementById('product-input').value;
+        const summary = document.getElementById('summarize-result').textContent;
+
+        if (!name || !company || !product || !summary) {
+            alert('Please fill out all fields and generate a summary first.');
+            return;
+        }
+
+        try {
+            const response = await fetch('/generate_outreach_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, company, product, summary })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                outreachResult.textContent = data.message;
+            } else {
+                outreachResult.textContent = `Error: ${data.error}`;
+            }
+        } catch (error) {
+            outreachResult.textContent = `Error: ${error.message}`;
+        }
+    });
+});
